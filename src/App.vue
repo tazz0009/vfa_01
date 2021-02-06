@@ -3,24 +3,8 @@
     <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <site-title :title="site.title" />
-      <!-- <v-spacer></v-spacer>
-      <v-btn class="mx-2" fab dark small @click="save">
-        <v-icon dark>
-          mdi-heart
-        </v-icon>
-      </v-btn>
-
-      <v-btn class="mx-2" fab dark small @click="read">
-        <v-icon dark>
-          mdi-plus
-        </v-icon>
-      </v-btn>
-
-      <v-btn class="mx-2" fab dark small @click="readOne">
-        <v-icon dark>
-          mdi-format-list-bulleted-square
-        </v-icon>
-      </v-btn> -->
+      <v-spacer></v-spacer>
+      <site-sign />
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer" width="400">
       <v-list-item>
@@ -50,13 +34,15 @@
 import SiteTitle from "@/views/site/title";
 import SiteFooter from "@/views/site/footer";
 import SiteMenu from "@/views/site/menu";
+import SiteSign from "@/views/site/sign";
 
 export default {
   name: "App",
   components: {
     SiteTitle,
     SiteFooter,
-    SiteMenu
+    SiteMenu,
+    SiteSign
   },
   data() {
     return {
