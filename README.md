@@ -35,6 +35,21 @@ firebase deploy --only functions
 firebase deploy --only database
 ```
 
+## chap0 Firesotre 사용 / 게시판/페이징 구현(33/105)
+
+- firebse.js
+
+```
+import "firebase/firestore";
+```
+
+- board 폴더/ router 추가
+- lodash lib 추가
+
+```
+npm i --save lodash
+```
+
 ## install
 
 ```

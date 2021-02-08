@@ -26,6 +26,9 @@
             >
               <v-icon>mdi-chevron-double-down</v-icon>
             </v-btn>
+            <v-btn @click="removeItem(items, i)" icon>
+              <v-icon>mdi-minus</v-icon>
+            </v-btn>
           </v-row>
         </v-list-item-action>
       </template>
@@ -52,6 +55,9 @@
               v-if="j < item.subItems.length - 1"
             >
               <v-icon>mdi-chevron-double-down</v-icon>
+            </v-btn>
+            <v-btn @click="removeItem(item.subItems, j)" icon>
+              <v-icon>mdi-minus</v-icon>
             </v-btn>
           </v-row>
         </v-list-item-action>
@@ -233,6 +239,10 @@ export default {
       // const item = items.splice(i, 1)[0];
       // items.splice(i + arrow, 0, item);
       items.splice(i + arrow, 0, ...items.splice(i, 1));
+      this.save();
+    },
+    async removeItem(items, i) {
+      items.splice(i, 1);
       this.save();
     }
   }
