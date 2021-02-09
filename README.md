@@ -35,7 +35,7 @@ firebase deploy --only functions
 firebase deploy --only database
 ```
 
-## chap0 Firesotre 사용 / 게시판/페이징 구현(33/105)
+## chap04 Firesotre 사용 / 게시판/페이징 구현(33/105)
 
 - firebse.js
 
@@ -48,6 +48,51 @@ import "firebase/firestore";
 
 ```
 npm i --save lodash
+```
+
+## chap05 Fire storage 맛보기 / toast editor 2 0 사용(35/105)
+
+- firebse.js
+
+```
+import "firebase/firebase-storage";
+```
+
+- axios install
+
+```
+npm install axios
+```
+
+- Download the Cloud SDK installer.(https://cloud.google.com/storage/docs/gsutil_install?authuser=0)
+- cors.json project-dir에 추가
+
+```
+[
+  {
+    "origin": ["*"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
+
+project-dir> gsutil cors set cors.json gs://<your-cloud-storage-bucket>
+```
+
+- editor 설치 (toast editor 2 0:https://github.com/nhn/tui.editor/tree/master/apps/vue-editor)
+- editor.js
+
+```
+npm install --save @toast-ui/vue-editor
+
+import Vue from "vue";
+import "codemirror/lib/codemirror.css";
+import "@toast-ui/editor/dist/toastui-editor.css";
+import "@toast-ui/editor/dist/i18n/ko-kr";
+
+import { Editor } from "@toast-ui/vue-editor";
+
+Vue.component("editor", Editor);
 ```
 
 ## install
